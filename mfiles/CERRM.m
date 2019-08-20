@@ -46,7 +46,7 @@ function [pkParams, fittedCt, kepRR, pkERRM, fittedCtERRM] = CERRM(Ct, Crr, t, k
        if std(rawKepRR)<1e-3
            % If the estimated kepRR from ERRM is closely grouped, then use median
            % This situation is very unlikely to happen in clinical data
-           % Then practical purpose of this is that when simulating
+           % The practical purpose of this is that when simulating
            % noiseless data, the interquartile mean can't be used because
            % there is no fluctuation in the estimated kepRR from ERRM
            kepRR = nanmedian(rawKepRR);
