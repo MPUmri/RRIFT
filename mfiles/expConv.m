@@ -19,6 +19,3 @@ function [f] = expConv(A,B,t)
     end
     f = f ./ B;
 end
-
-%% Old version
-
