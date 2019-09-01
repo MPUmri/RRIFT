@@ -17,19 +17,19 @@ A short example on simulated data is in `a00_quickExample.m`.
 
 The simulation scripts have filenames starting from `b00` to `b05`. 
 Since some of the simulation steps are time consuming (~30 minutes), the resulting `.mat` files have been uploaded into [an OSF repository](https://osf.io/wr3kf/files/). 
-If the four .mat files (begining with the filename `sim`) are downloaded from the OSF repository, then all of the even-numbered scripts can be skipped---i.e. you can run `b01`, `b03`, and `b05` to produce the figures in the manuscript.
+If the four .mat files (begining with the filename `sim`) are downloaded from the OSF repository and placed in the `data` folder, then all of the even-numbered scripts can be skipped---i.e. you can run `b01`, `b03`, and `b05` to produce the figures in the manuscript.
 
 ### Overview of simulation scripts
 
 - `b00_makeSimMap.m` makes the 2D virtual phantom which contains 100 parameter combinations. This is used as a starting point for all the simulation.
-    + The output file `simMap.mat` is in the OSF repository  
+    + The output file `simMap.mat` is in the OSF repository and should be placed in the `data` directory
 - `b01_sketchOverview.m` will produce **Fig. 1** in the manuscript
     + This script also performs a quick comparison with the reference tissue plus vessel (RTPV) technique and displays the results in the console/terminal
 - `b02_mainSimAnalysis.m` will fit RRIFT and the ETM to the simulated data under a range of noise levels and temporal resolutions
-    + The output file `simResults.mat` is in the OSF repository
+    + The output file `simResults.mat` is in the OSF repository and should be placed in the `data` directory
 - `b03_mainSimFigures.m` will produce **Figs. 2 & 3** in the manuscript
 - `b04_secondarySimAnalysis.m` is similar to `b02` except the reference tissue parameters are also allowed to vary. For speed, only a temporal resolution of 15 s and noise of 0.02 mM is used, but this can be changed in the code
-    + The output files are: `simResultsTRes15-varKtRR.mat` and `simResultsTRes15-varVeRR.mat`
+    + The output files are: `simResultsTRes15-varKtRR.mat` and `simResultsTRes15-varVeRR.mat`. They should be placed in the `data` directory.
 - `b05_secondarySimFigures.m` will produce **Fig. 4** in the manuscript
 
 ## In-vivo evaluation
