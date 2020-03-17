@@ -8,6 +8,9 @@ function [C_p, C_b] = GeorgiouAif(t, t0)
     if nargin < 2
         t0 = 0;
     end
+    if isrow(t)
+        t = t';
+    end
 %%
     t = t-t0;
     t(t<0) = 0;
@@ -38,7 +41,7 @@ function [C_p, C_b] = GeorgiouAif(t, t0)
             if ~isnan(curGamma)
                 % NaNs are returned for large, so assume they're zero
                 % (They are caused by a 0*Inf term)
-                C_b2(z) = C_b2(z) + GammaVariate((j+1)*alpha+j, beta, t(z)-j*tau);
+                C_b2(z) = C_b2(z) + curGamma;
             end
         end
     end
